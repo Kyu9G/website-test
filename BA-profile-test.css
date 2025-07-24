@@ -1,64 +1,103 @@
 body {
         background-color: rgba(0, 50, 69, 0.712);
+        padding-left: 250px;
+        padding-right: 250px;
+        height: 3000px;
       }
       .site-title {
-        width: fit-content;
+        width: 400px;
+        display: block;
+        text-align: center;
+        
         font-size: 35px;
         font-weight: bold;
-        text-align: center;
         padding-top: 50px;
         padding-bottom: 50px;
         margin: auto;
       }
 
       .profile-line {
-        width: fit-content;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 20px;
-        padding-right: 20px;
-        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: center;
+        column-gap: 20px;
+        row-gap: 20px;
       }
+
+      @media (max-width: 1100px) {
+        .profile-line {
+          grid-template-columns: 1fr 1fr;
+        }
+        .profile {
+          width: 350px;
+        }
+      }
+
+      @media (max-width: 755px) {
+        .profile-line {
+          grid-template-columns: 1fr;
+        }
+      }
+
+          
       .profile {
-        width: 250px;
-        height: 400px;
+        width: 350px;
         border: none;
         border-radius: 10px;
         background-color: rgb(130, 207, 255);
         box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
-        display: inline-block;
-        margin-right: 20px;
-        margin-left: 20px;
-        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        
       }
 
+      @media (min-width: 1500px) {
+        .profile {
+          width: 100%;
+        }
+      }
+
+      
+
       .profile:hover {
-        scale: 110%;
+        scale: 105%;
         transition: 0.1s;
       }
 
       .profile-pic {
-        width: 250px;
-        height: 250px;
-        object-fit: contain;
+        width: 100%;
+        object-fit: cover;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         margin-bottom: 15px;
+        display: inline-block;
       }
 
       p {
         margin-top: 0;
         margin-bottom: 0;
+        width: 100%;
       }
 
       .profile-desc {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
         margin-bottom: 5px;
         margin-left: 5px;
+        font-size: 16px;
+      }
+
+      @media (min-width: 1500px) {
+        .profile-desc, .profile-name {
+          font-size: 20px;
+        }
       }
 
       .profile-name {
         margin-bottom: 10px;
         font-weight: bold;
+        font-size: 18px;
       }
       
       .more-button {
